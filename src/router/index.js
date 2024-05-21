@@ -10,6 +10,10 @@ import Habitacion from '../views/Habitacion.vue';
 import NewHabitacion from '../components/Habitacion/NewHabitacion.vue';
 import EditarHabitacion from '../components/Habitacion/EditarHabitacion.vue';
 
+import Reserva from '../views/Reserva.vue';
+import EditarReserva from '../components/Reserva/EditarReserva.vue';
+import NewReserva from '../components/Reserva/NewReserva.vue';
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -55,7 +59,22 @@ const routes = [
     path: '/habitaciones/edit/:id',
     name: 'EditarHabitacion',
     component: EditarHabitacion
-  }
+  },
+  {
+    path: '/reservas',
+    name: 'Reserva',
+    component: Reserva
+  },
+  {
+    path: '/reservas/nueva',
+    name: 'NewReserva',
+    component: NewReserva
+  },
+  {
+    path: '/reservas/editar/:id',
+    name: 'EditarReserva',
+    component: EditarReserva
+  },
 ];
 
 const router = new VueRouter({
