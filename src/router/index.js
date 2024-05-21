@@ -6,6 +6,10 @@ import Cliente from '../views/Cliente.vue';
 import NewCliente from '../components/Cliente/NewCliente.vue';
 import EditarCliente from '../components/Cliente/EditarCliente.vue';
 
+import Habitacion from '../views/Habitacion.vue';
+import NewHabitacion from '../components/Habitacion/NewHabitacion.vue';
+import EditarHabitacion from '../components/Habitacion/EditarHabitacion.vue';
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -36,6 +40,21 @@ const routes = [
     path: '/clientes/edit/:id',
     name: 'EditarCliente',
     component: EditarCliente
+  },
+  {
+    path: '/habitaciones',
+    name: 'Habitacion',
+    component: Habitacion
+  },
+  {
+    path: '/habitaciones/new',
+    name: 'NewHabitacion',
+    component: NewHabitacion
+  },
+  {
+    path: '/habitaciones/edit/:id',
+    name: 'EditarHabitacion',
+    component: EditarHabitacion
   }
 ];
 
