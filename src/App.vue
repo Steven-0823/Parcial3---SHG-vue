@@ -5,7 +5,8 @@
       <router-link to="/about">About</router-link> |
       <router-link to="/clientes">Clientes</router-link> |
       <router-link to="/habitaciones">Habitacion</router-link> |
-      <router-link to="/reservas">Reservas</router-link>
+      <router-link to="/reservas">Reservas</router-link> |
+      <router-link to="/servicios">Servicios</router-link>
 
     </nav>
     <router-view/>

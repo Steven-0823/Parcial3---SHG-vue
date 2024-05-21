@@ -14,6 +14,10 @@ import Reserva from '../views/Reserva.vue';
 import EditarReserva from '../components/Reserva/EditarReserva.vue';
 import NewReserva from '../components/Reserva/NewReserva.vue';
 
+import Servicio from '../views/Servicios.vue';
+import EditarServicio from '../components/Servicio/EditarServicio.vue';
+import NewServicio from '../components/Servicio/NewServicio.vue';
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -75,6 +79,21 @@ const routes = [
     name: 'EditarReserva',
     component: EditarReserva
   },
+  {
+    path: '/servicios',
+    name: 'Servicio',
+    component: Servicio
+  },
+  {
+    path: '/servicios/edit/:id',
+    name: 'EditarServicio',
+    component: EditarServicio
+  },
+  {
+    path: '/servicios/new',
+    name: 'NewServicio',
+    component: NewServicio
+  }
 ];
 
 const router = new VueRouter({
