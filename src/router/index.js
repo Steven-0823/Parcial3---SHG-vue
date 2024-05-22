@@ -18,6 +18,10 @@ import Servicio from '../views/Servicios.vue';
 import EditarServicio from '../components/Servicio/EditarServicio.vue';
 import NewServicio from '../components/Servicio/NewServicio.vue';
 
+import Reservas_servicios from '../views/Reservas_servicios.vue';
+import EditarReservaServicio from '../components/Reserva_Servicio/EditarReservaServicio.vue';
+import NewReservaServicio from '../components/Reserva_Servicio/NewReservaServicio.vue';
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -93,6 +97,21 @@ const routes = [
     path: '/servicios/new',
     name: 'NewServicio',
     component: NewServicio
+  },
+  {
+    path: '/reserva_servicios',
+    name: 'ReservasServicios',
+    component: Reservas_servicios
+  },
+  {
+    path: '/reserva_servicios/edit/:id',
+    name: 'EditarReservaServicio',
+    component: EditarReservaServicio
+  },
+  {
+    path: '/reserva_servicios/new',
+    name: 'NewReservaServicio',
+    component: NewReservaServicio
   }
 ];
 
