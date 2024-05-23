@@ -43,7 +43,7 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 
 export default {
-  name: 'ReservaServicio',
+  name: 'ReservaServicios',
   data() {
     return {
       reservas_servicios: []
@@ -78,13 +78,16 @@ export default {
     }
   },
   mounted() {
-    axios.get('http://127.0.0.1:8000/api/reservas_servicios')
-      .then(response => {
-        this.reservas_servicios = response.data.reservas_servicios
-      }).catch(error => {
-        console.error('Error:', error)
-      })
-  }
+  axios.get('http://127.0.0.1:8000/api/reservas_servicios')
+    .then(response => {
+      console.log(response.data); // Agrega esto para verificar los datos recibidos
+      this.reservas_servicios = response.data.reserva_servicios;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+
 }
 </script>
 

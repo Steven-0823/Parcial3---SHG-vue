@@ -78,14 +78,14 @@ export default {
   },
   methods: {
     cancelar() {
-      this.$router.push({ name: 'ReservaServicio' })
+      this.$router.push({ name: 'ReservaServicios' })
     },
     async updateServicioreserva() {
       try {
         const res = await axios.put(`http://127.0.0.1:8000/api/reservas_servicios/${this.$route.params.id}`, this.reserva_servicio);
 
         if (res.status == 200) {
-          this.$router.push({ name: 'ReservaServicio' })
+          this.$router.push({ name: 'ReservaServicios' })
           Swal.fire({
             position: 'center',
             icon: 'success',
@@ -106,17 +106,33 @@ export default {
       }
     },
     async loadReservaservicio() {
-      const response = await axios.get(`http://127.0.0.1:8000/api/reservas_servicios/${this.$route.params.id}`)
-      this.reserva_servicio = response.data.reserva_servicio
-    },
-    async loadReserva() {
-      const reservasRes = await axios.get('http://127.0.0.1:8000/api/reservas')
-      this.reservas = reservasRes.data.reservas
-    },
-    async loadServicios() {
-      const serviciosRes = await axios.get('http://127.0.0.1:8000/api/servicios')
-      this.servicios = serviciosRes.data.servicios
-    }
+  try {
+    const response = await axios.get(`http://127.0.0.1:8000/api/reservas_servicios/${this.$route.params.id}`)
+    console.log('Reserva Servicio:', response.data.reserva_servicio); // Verifica los datos aquí
+    this.reserva_servicio = response.data.reserva_servicio
+  } catch (error) {
+    console.error('Error al cargar reserva servicio:', error)
+  }
+},
+async loadReserva() {
+  try {
+    const reservasRes = await axios.get('http://127.0.0.1:8000/api/reservas')
+    console.log('Reservas:', reservasRes.data.reservas); // Verifica los datos aquí
+    this.reservas = reservasRes.data.reservas
+  } catch (error) {
+    console.error('Error al cargar reservas:', error)
+  }
+},
+async loadServicios() {
+  try {
+    const serviciosRes = await axios.get('http://127.0.0.1:8000/api/servicios')
+    console.log('Servicios:', serviciosRes.data.servicios); // Verifica los datos aquí
+    this.servicios = serviciosRes.data.servicios
+  } catch (error) {
+    console.error('Error al cargar servicios:', error)
+  }
+}
+
   },
   mounted() {
     this.loadReservaservicio()

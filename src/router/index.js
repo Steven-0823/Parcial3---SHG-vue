@@ -100,7 +100,7 @@ const routes = [
   },
   {
     path: '/reserva_servicios',
-    name: 'ReservasServicios',
+    name: 'ReservasServicio',
     component: Reservas_servicios
   },
   {
